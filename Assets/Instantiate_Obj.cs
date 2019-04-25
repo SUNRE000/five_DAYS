@@ -3,20 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Instantiate_Obj : MonoBehaviour {
-	public GameObject Instantiate_Position; //物件的生成點。
+	public GameObject[] Objects; //裝生成物件的陣列。
 
-	public GameObject Box; //要生成的物件。
-	// Use this for initialization
+	public Transform[] Points; //裝生成點的陣列。
 
-	void Start () {
+	public float Ins_Time = 5; //每幾秒生成一次。
 
-			Instantiate (Box, Instantiate_Position.transform.position,
+	//public 公開 –
 
-				Instantiate_Position.transform.rotation);
-		
+	//在宣告前面加上public，程式碼底下會出現欄位，可以從外部放入指定的物件(要與宣告類型相同哦!)。
+
+
+
+	void Start ()
+
+	{
+
+		InvokeRepeating("Ins_Objs", Ins_Time, Ins_Time);
+
+		//重複呼叫(“函式名”，第一次間隔幾秒呼叫，每幾秒呼叫一次)。
+
 	}
-	// Update is called once per frame
-	void Update () {
-		
+
+
+
+	void Ins_Objs() //生成物件函式。
+
+	{
+
+		int Random_Objects = Random.Range(0, Objects.Length);
+
+		//隨機產生0~物件陣列長度的整數-1(不包含最大值所以-1)。
+
+
+
+		int Random_Points = Random.Range(0, Points.Length);
+
+		//隨機產生0~生成點陣列長度的整數-1(不包含最大值所以-1)。
+
+
+
+		Instantiate(Objects[Random_Objects], Points[Random_Points].transform.position, Points [Random_Points].transform.rotation);
+
+		//Instantiate實例化(要生成的物件, 物件位置, 物件旋轉值);
+
 	}
 }
