@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/script.meta
 guid: eb58c792670aac2429fd4e301ac8192c
 folderAsset: yes
 timeCreated: 1556160233
+=======
+guid: a2bdec7e4ac39964ba8520a451c4aa17
+folderAsset: yes
+timeCreated: 1556165627
+>>>>>>> 3f19b2064a6e28ebb5a820cbfbfc6b083bf1ebaa:Assets/Sound.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

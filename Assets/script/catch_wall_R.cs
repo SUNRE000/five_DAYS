@@ -43,10 +43,16 @@ public class catch_wall_R : MonoBehaviour
            // scoreCount += 1;
           //  score.text = "分數" + scoreCount.ToString();
         }
+        if (collision.collider.tag == "head")
+        {
+            Destroy(GameObject.FindWithTag("head"));
+        }
         if (GameObject.FindWithTag("right") == false || GameObject.FindWithTag("left")==false)
         {
-            scoreCount += 1;
-            score.text = "分數" + scoreCount.ToString();
+            if(GameObject.FindWithTag("left") == false||GameObject.FindWithTag("head")==false){
+                scoreCount += 1;
+                score.text = "分數" + scoreCount.ToString();
+            }
         }
     }
 }
